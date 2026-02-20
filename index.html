@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoFall's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-brand">Portfolio</div>
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="about">About Me</button>
+            <button class="tab-btn" data-tab="tech">Tech</button>
+            <button class="tab-btn" data-tab="misc">Miscellaneous</button>
+        </div>
+    </nav>
+
+    <!-- ABOUT ME -->
+    <section id="about" class="tab-content active">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Hey, I'm <span class="accent">Diego</span> !</h1>
+                <p class="tagline">Software Developer &middot; 5+ Years of Experience</p>
+                <p class="bio">
+                    A self-taught developer with over five years of hands-on experience
+                    building software. I thrive on solving hard problems and learning
+                    new technologies independently. I'm currently looking for my next
+                    opportunity to contribute to a great team.
+                </p>
+            </div>
+            <div class="hero-photo">
+                <div class="photo-placeholder">Photo</div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h2>Contact</h2>
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-label">Email</span>
+                    <a href="mailto:you@example.com">dgj.business.07@gmail.com</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">GitHub</span>
+                    <a href="https://github.com/Robatortas" target="_blank">github.com/Robatortas</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">LinkedIn</span>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a>
+                </div>
+                <div class="contact-card">
+                    <span class="contact-label">Location</span>
+                    <span>Hermosillo, México</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="skills-section">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">Git</span>
+                <span class="skill-tag">HTML</span>
+                <span class="skill-tag">CSS</span>
+                <!-- Add or remove as needed -->
+            </div>
+        </div>
+    </section>
+
+    <!-- TECH PROJECTS -->
+    <section id="tech" class="tab-content">
+        <h2>Tech Projects</h2>
+        <p class="section-subtitle">A selection of my most prominent software projects.</p>
+        <div class="projects-grid">
+
+            <article class="project-card">
+                <h3>Project One</h3>
+                <p>Brief description of what this project does and why it matters.</p>
+                <div class="project-tags">
+                    <span class="skill-tag">React</span>
+                    <span class="skill-tag">Node.js</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">Source Code</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h3>Project Two</h3>
+                <p>Brief description of what this project does and why it matters.</p>
+                <div class="project-tags">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Docker</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">Source Code</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h3>Project Three</h3>
+                <p>Brief description of what this project does and why it matters.</p>
+                <div class="project-tags">
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">SQL</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">Source Code</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h3>Project Four</h3>
+                <p>Brief description of what this project does and why it matters.</p>
+                <div class="project-tags">
+                    <span class="skill-tag">Rust</span>
+                    <span class="skill-tag">WebAssembly</span>
+                </div>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Demo</a>
+                    <a href="#" target="_blank">Source Code</a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- MISCELLANEOUS -->
+    <section id="misc" class="tab-content">
+        <h2>Miscellaneous</h2>
+        <p class="section-subtitle">Creative work beyond code — music, 3D renders, photography, and more.</p>
+
+        <div class="misc-cards">
+            <a href="music.html" class="misc-card">
+                <div class="misc-card-label">Music</div>
+                <div class="misc-card-desc">Browse my music projects and tracks</div>
+                <span class="misc-card-arrow">&#8594;</span>
+            </a>
+            <a href="renders.html" class="misc-card">
+                <div class="misc-card-label">3D Renders</div>
+                <div class="misc-card-desc">Explore my 3D artwork and renders</div>
+                <span class="misc-card-arrow">&#8594;</span>
+            </a>
+            <a href="photography.html" class="misc-card">
+                <div class="misc-card-label">Photography</div>
+                <div class="misc-card-desc">View my photography collection</div>
+                <span class="misc-card-arrow">&#8594;</span>
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>2026 NoFall</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
