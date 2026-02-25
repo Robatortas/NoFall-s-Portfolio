@@ -65,7 +65,6 @@ h3 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--text);
-    transition: all 0.2s ease-in-out;
 }
 .nav-brand a {
     font-size: 2rem;
@@ -118,6 +117,10 @@ h3 {
     from { opacity: 0; transform: translateY(8px); }
     to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes leftFadeIn {
+    from { opacity: 0; transform: translateX(8px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
 
 /* ===== About / Hero ===== */
 .hero {
@@ -125,6 +128,7 @@ h3 {
     align-items: center;
     gap: 3rem;
     margin-bottom: 3rem;
+    justify-content: flex-end;
 }
 
 .hero-text {
@@ -223,7 +227,10 @@ h3 {
     padding: 1.5rem;
     transition: border-color 0.2s, transform 0.2s;
 }
-.project-card a {text-decoration: none;}
+.project-card a {
+    text-decoration: none;
+    color: var(--text);
+}
 .project-card:hover {
     border-color: var(--accent-dim);
     transform: translateY(-2px);
