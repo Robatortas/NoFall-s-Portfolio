@@ -65,6 +65,17 @@ h3 {
     font-size: 2rem;
     font-weight: 700;
     color: var(--text);
+    transition: all 0.2s ease-in-out;
+}
+.nav-brand a {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    transition: all 0.2s ease-in-out;
+}
+.nav-brand a:hover {
+    text-decoration: none;
+    color: var(--text);
 }
 
 .nav-tabs {
@@ -212,6 +223,7 @@ h3 {
     padding: 1.5rem;
     transition: border-color 0.2s, transform 0.2s;
 }
+.project-card a {text-decoration: none;}
 .project-card:hover {
     border-color: var(--accent-dim);
     transform: translateY(-2px);
