@@ -19,6 +19,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     s.classList.add("active");
                 }
             });
-        });
+       });
     });
+
+    const navbar = document.querySelector('.navbar');
+    document.addEventListener("scroll", () => {
+        if(window.scrollY > navbar.clientHeight) {
+            // navbar.style.opacity = "0.8";
+            navbar.style.backgroundColor = "rgba(75,56,50,0.8)";
+            navbar.style.backdropFilter = "blur(10px)"
+            console.log("THING")
+        } else navbar.style.backgroundColor = "rgba(75,56,50,1.0)";
+        
+    })
+    
+            // requestAnimationFrame(animate)
 });

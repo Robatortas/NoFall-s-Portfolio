@@ -58,7 +58,8 @@ h3 {
     padding: 0.8rem 2rem;
     background: var(--surface);
     border-bottom: 1px solid var(--border);
-    backdrop-filter: blur(12px);
+    /* backdrop-filter: blur(12px); */
+    transition: all 0.5s ease;
 }
 
 .nav-brand {
