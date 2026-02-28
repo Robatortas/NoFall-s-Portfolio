@@ -22,16 +22,29 @@ document.addEventListener("DOMContentLoaded", () => {
        });
     });
 
+
+    // Navbar blurring stuff
     const navbar = document.querySelector('.navbar');
     document.addEventListener("scroll", () => {
         if(window.scrollY > navbar.clientHeight) {
             // navbar.style.opacity = "0.8";
             navbar.style.backgroundColor = "rgba(75,56,50,0.8)";
             navbar.style.backdropFilter = "blur(10px)"
-            console.log("THING")
         } else navbar.style.backgroundColor = "rgba(75,56,50,1.0)";
         
     })
-    
-            // requestAnimationFrame(animate)
+
+
+    const typewritees = document.querySelectorAll("#typewriter");
+    typewritees.forEach((tw) => {
+        const text = tw.innerText;
+        tw.innerHTML = "";
+        let i = 0;
+        setInterval(() => {
+            if (i < text.length) {
+                tw.innerHTML += text[i];
+                i++;
+            }
+        }, 100);
+    })
 });

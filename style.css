@@ -76,10 +76,11 @@ h3 {
     color: var(--text);
 }
 .nav-brand a {
+    scale: 1 !important;
     font-size: 2rem;
     font-weight: 700;
     color: var(--accent);
-    transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease;
 }
 .nav-brand a:hover {
     text-decoration: none;
@@ -135,22 +136,46 @@ h3 {
     to   { width: 110vw }
 }
 
-/* ===== About / Hero ===== */
+/* ===== Intro / Hero ===== */
+
+.about {
+    height: 100vh;
+    /* justify-content: flex-start; */
+    margin: 0 auto;
+    /* margin: 10px 100px 10px 100px; */
+    background-color: #453A38;
+}
+
+#about {
+    /* overflow: hidden; */
+    width: max-content;
+    height: 100vh;
+}
+
 .hero {
     display: flex;
     align-items: center;
-    gap: 3rem;
-    margin-bottom: 3rem;
-    justify-content: flex-end;
+    gap: 6rem;
+    margin-bottom: 3rem; 
+    justify-content: center;
 }
 
 .hero-text {
     flex: 1;
 }
+
 .hero-text h1 {
-    font-size: 2.2rem;
+    font-size: 10rem;
     margin-bottom: 0.4rem;
+    text-align: justify;
+    text-indent: 0px;
+    line-height: 12rem;
+    display: grid;
+    overflow-wrap: break-word;
 }
+.hero-text h2 {
+}
+
 .accent {
     color: var(--accent);
 }
@@ -165,18 +190,46 @@ h3 {
 }
 
 .hero-photo {
+    background-color: var(--surface-hover);
+    border-radius: 20px;
     flex-shrink: 0;
+    display: grid;
+    grid-column: 1/2;
+    text-wrap: inherit;
+    max-width: 420px;
+    padding: 15px;
+    outline: 20px solid var(--surface-hover);
+    margin: auto;
+    animation: leftFadeIn 0.3s ease-in !important;
 }
 .photo-placeholder {
-    width: 160px;
-    height: 160px;
-    border-radius: 50%;
+    width: 350px;
+    height: 450px;
+    margin: auto;
+    border-radius: 25px;
     background: var(--surface);
     border: 2px solid var(--border);
     display: grid;
+    background-repeat: no-repeat;
     place-items: center;
     color: var(--text-muted);
     font-size: 0.9rem;
+    background-size: cover;
+    background-position: -30px;
+    filter: grayscale(90%);
+    transition: all 0.5s ease;
+}
+.photo-placeholder:hover {
+    scale: 1.04 !important;
+    filter: grayscale(50%);
+}
+
+.hero-photo-info {
+    margin: 20px;
+    font-size: 1.3rem;
+    background-color: #85756788;
+    border-radius: 10px;
+    padding: 10px;
 }
 
 /* ===== Header ===== */
@@ -194,6 +247,10 @@ h3 {
 }
 
 /* ===== Contact ===== */
+.contact-hero {
+    margin: 0px 100px 0px 100px;
+}
+
 .contact-section {
     margin-bottom: 3rem;
 }
