@@ -19,6 +19,51 @@ document.addEventListener("DOMContentLoaded", () => {
                     s.classList.add("active");
                 }
             });
-        });
+       });
     });
+
+    const divisionPhotos = document.querySelectorAll("#section-photo")
+
+    // Navbar blurring stuff
+    const navbar = document.querySelector('.navbar');
+    document.addEventListener("scroll", () => {
+        if(window.scrollY > navbar.clientHeight) {
+            navbar.style.opacity = "0.0";
+            // navbar.style.backgroundColor = "rgba(75,56,50,0.0)";
+            // navbar.style.backdropFilter = "blur(10px)";
+        } else { 
+            // navbar.style.backgroundColor = "rgba(75,56,50,1.0)";
+            navbar.style.opacity = "1.0";
+        }
+        divisionPhotos.forEach((dP) => {
+            dP.style.transform = 'translateY(' + window.scrollY/13 + 'px)'
+        });
+
+    })
+
+    
+
+    const myPhoto = document.querySelector(".hero-photo");
+    const typewritees = document.querySelectorAll("#typewriter");
+    typewritees.forEach((tw) => {
+        const text = tw.innerText;
+        tw.innerHTML = "";
+        let i = 0;
+        setInterval(() => {
+            if (i < text.length) {
+                tw.innerHTML += text[i];
+                i++;
+            }
+        }, 100);
+    }) 
+    setInterval(() => {
+            myPhoto.style.visibility = "visible"
+            myPhoto.style.opacity = "100%"
+        }, 1400);
 });
+
+// const division = document.querySelector(".division")
+//     division.scrollIntoView({
+//         behavior: 'smooth',
+//         block: 'start'
+//     });

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Projects</title>    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<div id="loader">
+        <h1>Loading content...</h1>
+</div>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand"><a href="index.html"><span style="font-size: 50px;">NoFall's</span> Portfolio</a></div>
+        <div class="nav-brand" style="animation: leftFadeIn 0.3s ease;">Tech Projects</div>
+        <div class="nav-tabs">
+            <button class="tab-btn active" data-tab="about-owfa">OWFA</button>
+            <button class="tab-btn" data-tab="sample_1">Sample_2</button>
+            <button class="tab-btn" data-tab="sample_2">Sample_3</button>
+        </div>
+    </nav>
+
+    <section class="owfa-header">
+        <img id="header-image"src="res/DSC_0220.JPG" alt="">
+    </section>
+
+    <!-- ABOUT OWFA -->
+    <section id="about-owfa" class="tab-content active">
+        <div class="hero">
+            <div class="hero-text">
+                <h1 style="text-align: center; font-size: 3rem;">Other Words for Alone | OWFA</h1>
+                <p class="tagline">2D tile-based video game with procedural terrain generation and inhouse game engine</p>
+                <p class="bio">
+                    Other Words for Alone is a 2 year long project meant to hone my
+                    skills as a programmer.
+                    In the latest alpha versions of the game made with our own inhouse game engine made entirely in Java without the use of
+                    any external libraries. we implemented perlin noise-based terrain generation, physics, collision,
+                    inventory system, player movement, stamina, health and other interactuable items and entities.
+                    <b></b>
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="about-owfa" class="tab-content active">
+        <div class="hero">
+            <div class="hero-text">
+                <h1>Other Words for Alone | OWFA</h1>
+                <p class="tagline">2D tile-based video game with procedural terrain generation and inhouse game engine</p>
+                <p class="bio">
+                    Other Words for Alone is a 2 year long project meant to hone my
+                    skills as a programmer.
+                    In the latest alpha versions of the game made with our own inhouse game engine made entirely in Java without the use of
+                    any external libraries. we implemented perlin noise-based terrain generation, physics, collision,
+                    inventory system, player movement, stamina, health and other interactuable items and entities.
+                    <b></b>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script src="loader.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
