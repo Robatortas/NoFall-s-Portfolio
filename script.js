@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
 
+    const myPhoto = document.querySelector(".hero-photo");
     const typewritees = document.querySelectorAll("#typewriter");
     typewritees.forEach((tw) => {
         const text = tw.innerText;
@@ -46,5 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 i++;
             }
         }, 100);
-    })
+    }) 
+    setInterval(() => {
+            myPhoto.style.visibility = "visible"
+            myPhoto.style.opacity = "100%"
+        }, 1400);
 });

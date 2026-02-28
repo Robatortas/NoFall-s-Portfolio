@@ -111,11 +111,14 @@ h3 {
     color: #fff;
 }
 
+#intro {
+    margin: 2rem auto;
+    max-width: 960px;
+}
+
 /* ===== Tab Content ===== */
 .tab-content {
     display: none;
-    max-width: 960px;
-    margin: 2rem auto;
     padding: 0 1.5rem;
     animation: fadeIn 0.3s ease;
 }
@@ -173,8 +176,6 @@ h3 {
     display: grid;
     overflow-wrap: break-word;
 }
-.hero-text h2 {
-}
 
 .accent {
     color: var(--accent);
@@ -201,6 +202,9 @@ h3 {
     outline: 20px solid var(--surface-hover);
     margin: auto;
     animation: leftFadeIn 0.3s ease-in !important;
+    opacity: 0%;
+    visibility: hidden;
+    transition: opacity 1.5s ease;
 }
 .photo-placeholder {
     width: 350px;
@@ -244,6 +248,16 @@ h3 {
     width: 110vw;
     /* width: 100px; */
     animation: zoomIn 0.8s ease;
+}
+
+/* ===== Sections ===== */
+
+.hero-section-photo {
+    overflow: hidden;
+    max-width: fit-content;
+}
+#section-photo {
+    width: 0rem;
 }
 
 /* ===== Contact ===== */
