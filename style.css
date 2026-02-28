@@ -47,6 +47,14 @@ h3 {
     margin-bottom: 0.5rem;
 }
 
+#loader {
+    width: 100vw;
+    min-height: 100vh;
+    text-align: center;
+    margin-top: 50vh;
+    font-size: 30px;
+}
+
 /* ===== Navbar ===== */
 .navbar {
     position: sticky;
