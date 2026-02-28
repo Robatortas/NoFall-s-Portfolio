@@ -121,6 +121,10 @@ h3 {
     from { opacity: 0; transform: translateX(8px); }
     to   { opacity: 1; transform: translateX(0); }
 }
+@keyframes zoomIn {
+    from { width: 100vw }
+    to   { width: 110vw }
+}
 
 /* ===== About / Hero ===== */
 .hero {
@@ -164,6 +168,20 @@ h3 {
     place-items: center;
     color: var(--text-muted);
     font-size: 0.9rem;
+}
+
+/* ===== Header ===== */
+.owfa-header{
+    display: flex;
+    max-height: 20rem;
+    justify-content: center;
+}
+#header-image {
+    display: flex;
+    object-fit: cover;
+    width: 110vw;
+    /* width: 100px; */
+    animation: zoomIn 0.8s ease;
 }
 
 /* ===== Contact ===== */
