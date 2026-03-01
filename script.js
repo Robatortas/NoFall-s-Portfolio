@@ -39,8 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", () => {
         if(window.scrollY > navbar.clientHeight) {
             navbar.style.opacity = "0.0";
+            navbar.style.visibility = "hidden"
         } else {
             navbar.style.opacity = "1.0";
+            navbar.style.visibility = "visible"
         }
         divisionPhotos.forEach((dP) => {
             dP.style.transform = 'translateY(' + window.scrollY/13 + 'px)'
@@ -68,7 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
             myPhoto.style.visibility = "visible";
             myPhoto.style.opacity = "100%";
-        }, 1400);
+        }, 1800);
 
     tempTimer = 2000
     if(!currentHTML.includes("index.html")) tempTimer = 0;
