@@ -24,6 +24,7 @@ html {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     /* scroll-padding-top: var(--navbar-height); */
+    scroll-snap-align: start;
 }
 
 body {
@@ -62,7 +63,6 @@ h3 {
 
 /* ===== Navbar ===== */
 .navbar {
-    scroll-snap-align: start;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -70,11 +70,12 @@ h3 {
     align-items: center;
     justify-content: space-between;
     padding: 0.0rem 2rem;
-    background: var(--surface);
+    background: var(--lightDivision);
     border-bottom: 1px solid var(--border);
     /* backdrop-filter: blur(12px); */
-    transition: all 0.5s ease;
-    margin-bottom: var(--navbar-height);
+    margin-bottom: 50px;
+    filter: opacity(0%);
+    transition: filter 1.0s ease;
 }
 
 .nav-brand {
@@ -119,6 +120,7 @@ h3 {
 }
 
 #intro {
+    /* scroll-snap-align: end; */
     margin: 0 auto;
     max-width: 960px;
     min-height: calc(100vh - var(--navbar-height));
@@ -164,7 +166,7 @@ h3 {
 }
 
 .intro-hero {
-    scroll-snap-align: center;
+    /* scroll-snap-align: center; */
     display: flex;
     align-items: center;
     gap: 6rem;
@@ -286,7 +288,7 @@ h3 {
     width: 40%;
     height: 100%;
     background-repeat: repeat;
-    background-color: magenta;
+    background-color: var(--lightDivision);
 }
 #section-photo {
     width: 100%;

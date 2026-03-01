@@ -29,10 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", () => {
         if(window.scrollY > navbar.clientHeight) {
             navbar.style.opacity = "0.0";
-            // navbar.style.backgroundColor = "rgba(75,56,50,0.0)";
-            // navbar.style.backdropFilter = "blur(10px)";
-        } else { 
-            // navbar.style.backgroundColor = "rgba(75,56,50,1.0)";
+        } else {
             navbar.style.opacity = "1.0";
         }
         divisionPhotos.forEach((dP) => {
@@ -44,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
 
     const myPhoto = document.querySelector(".hero-photo");
+    const navBar = document.querySelector('.navbar')
     const typewritees = document.querySelectorAll("#typewriter");
     typewritees.forEach((tw) => {
         const text = tw.innerText;
@@ -56,14 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 100);
     }) 
-    setInterval(() => {
-            myPhoto.style.visibility = "visible"
-            myPhoto.style.opacity = "100%"
+    
+    setTimeout(() => {
+            myPhoto.style.visibility = "visible";
+            myPhoto.style.opacity = "100%";
         }, 1400);
+    setTimeout(() => {
+            navBar.style.filter = "opacity(100%)";
+        }, 2000);
 });
-
-// const division = document.querySelector(".division")
-//     division.scrollIntoView({
-//         behavior: 'smooth',
-//         block: 'start'
-//     });
