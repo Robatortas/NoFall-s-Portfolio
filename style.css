@@ -337,20 +337,31 @@ h3 {
 .skills-section {
     margin-bottom: 2rem;
     scroll-snap-align: start;
+    overflow: hidden;
 }
 .skills-section p {font-size: 1.4vw;}
 .skills-section h2 {font-size: 8rem;}
 .skills-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 0.5rem;
+    width: max-content;
+    animation: infiniteSlide 10s linear infinite;
 }
+
+@keyframes infiniteSlide {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(100vw); }
+}
+
 .skill-tag {
     background: var(--surface);
     border: 1px solid var(--border);
     padding: 0.35rem 0.9rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 1.85rem;
+    width: fit-content;
+    height: fit-content;
     color: var(--text);
 }
 
