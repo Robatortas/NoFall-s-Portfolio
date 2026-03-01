@@ -151,7 +151,7 @@ h3 {
 
 /* ===== Intro / Hero ===== */
 
-.about {
+.contents {
     height: 100vh;
     /* justify-content: flex-start; */
     margin: 0 auto;
@@ -300,6 +300,7 @@ h3 {
 
 /* ===== Contact ===== */
 .contact-hero {
+    scroll-snap-align: start;
     margin: 0px 100px 0px 100px;
 }
 
@@ -329,7 +330,9 @@ h3 {
 /* ===== Skills ===== */
 .skills-section {
     margin-bottom: 2rem;
+    scroll-snap-align: start;
 }
+.skills-section h2 {font-size: 8rem;}
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -531,4 +534,9 @@ footer {
     .hero-text h1 {
         font-size: 1.6rem;
     }
+}
+
+body.no-scroll {
+    overflow: hidden;
+    height: 100%;
 }
