@@ -13,5 +13,4 @@ if(document.readyState === "loading") {
         loader.remove()
         console.log("Document Loaded");
     });
-console.log("AAA");
 }

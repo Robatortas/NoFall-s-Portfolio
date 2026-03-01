@@ -75,7 +75,7 @@ h3 {
     /* backdrop-filter: blur(12px); */
     margin-bottom: 50px;
     filter: opacity(0%);
-    transition: filter 1.0s ease;
+    transition: all 0.5s ease;
 }
 
 .nav-brand {
@@ -151,7 +151,7 @@ h3 {
 
 /* ===== Intro / Hero ===== */
 
-.about {
+.contents {
     height: 100vh;
     /* justify-content: flex-start; */
     margin: 0 auto;
@@ -300,6 +300,7 @@ h3 {
 
 /* ===== Contact ===== */
 .contact-hero {
+    scroll-snap-align: start;
     margin: 0px 100px 0px 100px;
 }
 
@@ -329,7 +330,9 @@ h3 {
 /* ===== Skills ===== */
 .skills-section {
     margin-bottom: 2rem;
+    scroll-snap-align: start;
 }
+.skills-section h2 {font-size: 8rem;}
 .skills-list {
     display: flex;
     flex-wrap: wrap;
@@ -514,21 +517,92 @@ footer {
 }
 
 /* ===== Responsive ===== */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
+    /* Navbar */
     .navbar {
         flex-direction: column;
         gap: 0.5rem;
         padding: 0.6rem 1rem;
     }
+    .nav-brand span {
+        font-size: 1.8rem !important;
+    }
+
+    /* Intro hero — stack vertically and scale down */
+    .intro-hero {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+    .hero-text {
+        text-align: center;
+    }
+    /* Target the spans directly — they carry the inline font-size */
+    .hero-text h1 {
+        line-height: 1.2 !important;
+    }
+    .hero-text h1 span {
+        font-size: 2.2rem !important;
+    }
+    .hero-text h2 span {
+        font-size: 1.4rem !important;
+    }
+    .hero-photo {
+        max-width: 90vw;
+    }
+    .photo-placeholder {
+        width: 220px;
+        height: 280px;
+    }
+    .hero-photo-info {
+        font-size: 1rem;
+    }
+
+    /* Division — size to content on mobile */
+    .division {
+        height: auto;
+        padding-bottom: 2rem;
+    }
+
+    /* Intro — don't force full viewport height on mobile */
+    #intro {
+        min-height: unset;
+    }
+
+    /* About / bio section */
+    .contents {
+        margin: 10px 1rem;
+        height: auto;
+    }
     .hero {
         flex-direction: column-reverse;
-        text-align: center;
-        gap: 1.5rem;
+        gap: 2rem;
+        height: auto;
+        padding: 1.5rem 1rem;
+        text-align: left;
+    }
+    .hero-section-photo {
+        width: 100%;
+        height: 420px;
+    }
+    /* Remove the desktop zoom — it causes clipping artifacts on mobile */
+    #section-photo {
+        scale: 1;
     }
     .bio {
-        max-width: 100%;
+        width: 100%;
+        font-size: 1.2rem;
     }
-    .hero-text h1 {
-        font-size: 1.6rem;
+
+    /* Skills */
+    .skills-section h2 {
+        font-size: 3rem;
+    }
+
+    /* Contact */
+    .contact-hero {
+        margin: 0 1rem;
     }
 }

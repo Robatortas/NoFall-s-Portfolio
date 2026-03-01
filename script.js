@@ -1,4 +1,14 @@
+window.onload = function() {
+    window.scrollTo(0, 0);
+};
+
+var currentHTML = document.URL
+console.log(currentHTML)
+
 document.addEventListener("DOMContentLoaded", () => {
+
+    lockScroll();
+
     const buttons = document.querySelectorAll(".tab-btn");
     const sections = document.querySelectorAll(".tab-content");
 
@@ -29,8 +39,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.addEventListener("scroll", () => {
         if(window.scrollY > navbar.clientHeight) {
             navbar.style.opacity = "0.0";
+            navbar.style.visibility = "hidden"
         } else {
             navbar.style.opacity = "1.0";
+            navbar.style.visibility = "visible"
         }
         divisionPhotos.forEach((dP) => {
             dP.style.transform = 'translateY(' + window.scrollY/13 + 'px)'
@@ -58,8 +70,21 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
             myPhoto.style.visibility = "visible";
             myPhoto.style.opacity = "100%";
-        }, 1400);
+        }, 1800);
+
+    tempTimer = 2000
+    if(!currentHTML.includes("index.html")) tempTimer = 0;
     setTimeout(() => {
             navBar.style.filter = "opacity(100%)";
-        }, 2000);
+            unlockScroll();
+        }, tempTimer);
 });
+
+
+lockScroll = () => {
+    if(currentHTML.includes("index.html")) document.documentElement.style.overflow = "hidden";
+}
+
+unlockScroll = () => {
+    if(currentHTML.includes("index.html")) document.documentElement.style.overflow = "visible";
+}
