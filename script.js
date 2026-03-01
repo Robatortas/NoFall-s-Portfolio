@@ -1,13 +1,17 @@
-window.onload = function() {
-    window.scrollTo(0, 0);
-};
+const DEVMODE = true;
+
+if(!DEVMODE) {
+    window.onload = function() {
+        window.scrollTo(0, 0);
+    };
+}
 
 var currentHTML = document.URL
 console.log(currentHTML)
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    lockScroll();
+    if(!DEVMODE)lockScroll();
 
     const buttons = document.querySelectorAll(".tab-btn");
     const sections = document.querySelectorAll(".tab-content");
