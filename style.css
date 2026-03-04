@@ -344,9 +344,9 @@ h3 {
 .skills-list {
     display: flex;
     flex-wrap: nowrap;
-    gap: 0.5rem;
+    gap: 2.0rem;
     width: max-content;
-    animation: infiniteSlide 10s linear infinite;
+    animation: infiniteSlide 20s linear infinite;
 }
 
 @keyframes infiniteSlide {
@@ -355,7 +355,10 @@ h3 {
 }
 
 .skill-tag {
-    background: var(--surface);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* background: var(--surface); */
     border: 1px solid var(--border);
     padding: 0.35rem 0.9rem;
     border-radius: 20px;
@@ -363,6 +366,11 @@ h3 {
     width: fit-content;
     height: fit-content;
     color: var(--text);
+}
+.skill-tag img {
+    display: block;
+    height: clamp(7rem, 10vw, 10rem);
+    width: auto;
 }
 
 /* ===== Tech Projects ===== */
@@ -532,6 +540,77 @@ footer {
     font-size: 0.8rem;
     border-top: 1px solid var(--border);
     margin-top: 3rem;
+}
+
+/* ===== Tablet (769px – 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navbar */
+    .navbar {
+        padding: 0 1.2rem;
+    }
+
+    /* Intro hero — shrink photo & gaps so text has room */
+    .intro-hero {
+        gap: 2.5rem;
+    }
+    .hero-text h1 {
+        line-height: 1.2 !important;
+    }
+    .hero-text h1 span {
+        font-size: clamp(3rem, 5vw, 5rem) !important;
+    }
+    .hero-text h2 span {
+        font-size: clamp(2rem, 3.5vw, 3.5rem) !important;
+    }
+    .hero-photo {
+        max-width: 280px;
+        width: 280px;
+        padding: 10px;
+    }
+    .photo-placeholder {
+        width: 240px;
+        height: 310px;
+    }
+
+    /* #about uses width: max-content on desktop — fix overflow on tablet */
+    #about {
+        width: 100%;
+    }
+
+    /* Contents — tighten horizontal margins */
+    .contents {
+        margin: 10px clamp(1rem, 3vw, 40px);
+    }
+
+    /* About / bio hero row */
+    .hero {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    .bio {
+        font-size: clamp(0.95rem, 1.4vw, 1.5rem);
+    }
+
+    /* Skills heading is 8rem on desktop — scale it down */
+    .skills-section h2 {
+        font-size: 5rem;
+    }
+    .skills-section p {
+        font-size: 1rem;
+    }
+
+    /* Contact — reduce side margins */
+    .contact-hero {
+        margin: 0 3rem;
+    }
+
+    /* Misc cards — reduce oversized vertical padding */
+    .misc-card {
+        padding: 3rem 2rem;
+    }
+    .misc-card-label {
+        font-size: 1.75rem;
+    }
 }
 
 /* ===== Responsive ===== */
