@@ -49,7 +49,7 @@ h2 {
     margin-bottom: 1rem;
 }
 h3 {
-    font-size: 1.15rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -73,7 +73,7 @@ h3 {
     background: var(--lightDivision);
     border-bottom: 1px solid var(--border);
     /* backdrop-filter: blur(12px); */
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     filter: opacity(0%);
     transition: all 0.5s ease;
 }
@@ -135,6 +135,10 @@ h3 {
 .tab-content.active {
     display: block;
 }
+.tab-button {
+    padding: 0%;
+    /* color: red; */
+}
 
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(8px); }
@@ -155,7 +159,8 @@ h3 {
     height: 100vh;
     /* justify-content: flex-start; */
     margin: 0 auto;
-    margin: 10px 100px 10px 100px;
+    margin: 10px clamp(1rem, 7vw, 100px) 10px clamp(1rem, 7vw, 100px);
+    overflow: hidden;
     /* background-color: var(--lightDivision); */
 }
 
@@ -203,7 +208,9 @@ h3 {
     flex-shrink: 0;
     text-wrap: inherit;
     max-width: 420px;
+    width: 420px;
     padding: 15px;
+    overflow: hidden;
     /* outline: 20px solid var(--surface-hover); */
     margin: auto;
     animation: leftFadeIn 0.3s ease-in !important;
@@ -234,10 +241,12 @@ h3 {
 
 .hero-photo-info {
     margin: 20px;
-    font-size: 1.3rem;
+    font-size: clamp(0.9rem, 1.3vw, 1.3rem);
     background-color: #85756788;
     border-radius: 10px;
     padding: 10px;
+    overflow-wrap: break-word;
+    min-width: 0;
 }
 
 /* ===== Header ===== */
@@ -265,8 +274,8 @@ h3 {
 
 .hero {
     display: flex;
-    gap: 6rem;
-    padding: 3rem;
+    gap: clamp(1rem, 4vw, 6rem);
+    padding: clamp(1rem, 2.5vw, 3rem);
     height: 100%;
 }
 
@@ -275,10 +284,11 @@ h3 {
     display: flex;
     align-items: flex-start;
     /* max-width: 80%; */
-    font-size: 2rem;
+    font-size: clamp(1rem, 1.6vw, 2rem);
     color: var(--text);
     grid-row: 1/2;
     width: 60%;
+    overflow: hidden;
 }
 
 .hero-section-photo {
@@ -331,20 +341,40 @@ h3 {
 .skills-section {
     margin-bottom: 2rem;
     scroll-snap-align: start;
+    overflow: hidden;
 }
+.skills-section p {font-size: 1.4vw;}
 .skills-section h2 {font-size: 8rem;}
 .skills-list {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-wrap: nowrap;
+    gap: 2.0rem;
+    width: max-content;
+    animation: infiniteSlide 20s linear infinite;
 }
+
+@keyframes infiniteSlide {
+    from { transform: translateX(-100%); }
+    to   { transform: translateX(100vw); }
+}
+
 .skill-tag {
-    background: var(--surface);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* background: var(--surface); */
     border: 1px solid var(--border);
     padding: 0.35rem 0.9rem;
     border-radius: 20px;
-    font-size: 0.85rem;
+    font-size: 1.85rem;
+    width: fit-content;
+    height: fit-content;
     color: var(--text);
+}
+.skill-tag img {
+    display: block;
+    height: clamp(7rem, 10vw, 10rem);
+    width: auto;
 }
 
 /* ===== Tech Projects ===== */
@@ -355,7 +385,8 @@ h3 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
 }
 
@@ -436,6 +467,7 @@ h3 {
 
 /* ===== Sub-page (music / renders / photography) ===== */
 .subpage-header {
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 1.2rem;
@@ -454,6 +486,26 @@ h3 {
 .back-link:hover {
     background: var(--surface);
     text-decoration: none;
+}
+
+.video-container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-47%, -49%); /* Centers the video precisely */
+    object-fit: cover; /* Ensures the video covers the area without stretching */
+    scale: 1.08;
+    z-index: -1; /* Puts the video behind other content */
 }
 
 .gallery-grid {
@@ -514,6 +566,77 @@ footer {
     font-size: 0.8rem;
     border-top: 1px solid var(--border);
     margin-top: 3rem;
+}
+
+/* ===== Tablet (769px – 1024px) ===== */
+@media (min-width: 769px) and (max-width: 1024px) {
+    /* Navbar */
+    .navbar {
+        padding: 0 1.2rem;
+    }
+
+    /* Intro hero — shrink photo & gaps so text has room */
+    .intro-hero {
+        gap: 2.5rem;
+    }
+    .hero-text h1 {
+        line-height: 1.2 !important;
+    }
+    .hero-text h1 span {
+        font-size: clamp(3rem, 5vw, 5rem) !important;
+    }
+    .hero-text h2 span {
+        font-size: clamp(2rem, 3.5vw, 3.5rem) !important;
+    }
+    .hero-photo {
+        max-width: 280px;
+        width: 280px;
+        padding: 10px;
+    }
+    .photo-placeholder {
+        width: 240px;
+        height: 310px;
+    }
+
+    /* #about uses width: max-content on desktop — fix overflow on tablet */
+    #about {
+        width: 100%;
+    }
+
+    /* Contents — tighten horizontal margins */
+    .contents {
+        margin: 10px clamp(1rem, 3vw, 40px);
+    }
+
+    /* About / bio hero row */
+    .hero {
+        gap: 2rem;
+        padding: 1.5rem;
+    }
+    .bio {
+        font-size: clamp(0.95rem, 1.4vw, 1.5rem);
+    }
+
+    /* Skills heading is 8rem on desktop — scale it down */
+    .skills-section h2 {
+        font-size: 5rem;
+    }
+    .skills-section p {
+        font-size: 1rem;
+    }
+
+    /* Contact — reduce side margins */
+    .contact-hero {
+        margin: 0 3rem;
+    }
+
+    /* Misc cards — reduce oversized vertical padding */
+    .misc-card {
+        padding: 3rem 2rem;
+    }
+    .misc-card-label {
+        font-size: 1.75rem;
+    }
 }
 
 /* ===== Responsive ===== */

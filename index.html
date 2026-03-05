@@ -28,8 +28,8 @@
         <section id="intro">
             <div class="intro-hero">
                 <div class="hero-text">
-                    <h1><span id="typewriter" style="font-size: 8rem;">Software Developer</span></h1>
-                    <h2><span id="typewriter" class="accent"" style="font-size: 5rem;">Diego Gómez Jardines</span></h2>
+                    <h1><span id="typewriter" style="font-size: clamp(6rem, 8vw, 8rem);">Software Developer</span></h1>
+                    <h2><span id="typewriter" class="accent"" style="font-size: clamp(4rem, 6vw, 6rem);">Diego Gómez Jardines</span></h2>
                 </div>
                 <div class="hero-photo">
                     <div class="photo-placeholder" data-tab="pfp" style="background-image: url('res/formal_pfp.png'); ;">
@@ -59,6 +59,9 @@
                         <br>
                         Im a programmer, artist, musician, and occasional photographer. (pss ! . . The picture to your
                         left is precisely one I took in my living room.)
+                        <br>
+                        I've developed tools for professional work, from calculators to notepads, although the most prominent
+                        work I've done is with game development, which entales window management, memory control, pixel array management, and much more.
                     </p>
                 </div>
             </div>
@@ -69,16 +72,25 @@
             <section class="contents">
                 <div class="skills-section">
                     <h2>Skills</h2>
-                    <div class="skills-list">
-                        <span class="skill-tag">Java</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">C++</span>
-                        <span class="skill-tag">C#</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">HTML</span>
-                        <span class="skill-tag">CSS</span>
-                        <span class="skill-tag">OpenGL</span>
+                    <h3>Programming</h3>
+                    <p>
+                        Without tooting my horn too much, I've been developing applications in Java for the past 5 years. Specifying on videogame development and computer graphics.
+                        <br>
+                        JavaScript, HTML, and CSS are three skills in which I'm extensively familiar with, being able to produce sites like the one you're using right now !
+                    </p>
+                    <br><br><br>
+                    <div style="background-color: var(--lightDivision); padding: 2rem 0 2rem 0;">
+                        <div class="skills-list">
+                            <span class="skill-tag"><img src="res/java.png" alt="Java"></span>
+                            <span class="skill-tag"><img src="res/Python-logo-notext.svg" alt="Python"></span>
+                            <span class="skill-tag"><img src="res/JS_Logo.png" alt="JS"></span>
+                            <span class="skill-tag"><img src="res/c++.png" alt="C++"></span>
+                            <span class="skill-tag"><img src="res/C_Sharp.png" alt="C#"></span>
+                            <span class="skill-tag"><img src="res/git.png" alt="Git"></span>
+                            <span class="skill-tag"><img src="res/html_logo.png" alt="HTML"></span>
+                            <span class="skill-tag"><img src="res/css_logo.png" alt="CSS"></span>
+                            <span class="skill-tag"><img src="res/opengl_logo.png" alt="OpenGL"></span>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -117,63 +129,60 @@
     <section id="tech" class="tab-content">
         <h2>Tech Projects</h2>
         <p class="section-subtitle">My most precious technological projects !</p>
-        <div class="projects-grid">
+        <div class="projects-container">    
+            <div class="projects-grid">
+                <article class="project-card">
+                    <a href="owfa.html">
+                        <h3>Other Words for Alone AKA: OWFA</h3>
+                        <p>2D tile-based video game with procedural terrain generation and inhouse game engine</p> <!--Description of project--> 
+                        <div class="project-tags">
+                            <span class="skill-tag">Java</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a>
+                            <a href="#" target="_blank">Source Code</a>
+                        </div>
+                    </a>
+                </article>
 
-            
-            <article class="project-card">
-                <a href="owfa.html">
-                    <h3>Other Words for Alone AKA: OWFA</h3>
-                    <p>2D tile-based video game with procedural terrain generation and inhouse game engine</p> <!--Description of project--> 
+                <article class="project-card">
+                    <h3>Coffee Beans Deluxe</h3>
+                    <p>Video and audio downloader</p>
                     <div class="project-tags">
-                        <span class="skill-tag">React</span>
-                        <span class="skill-tag">Node.js</span>
+                        <span class="skill-tag">Python</span>
                     </div>
                     <div class="project-links">
                         <a href="#" target="_blank">Live Demo</a>
                         <a href="#" target="_blank">Source Code</a>
                     </div>
-                </a>
-            </article>
+                </article>
 
-            <article class="project-card">
-                <h3>Project Two</h3>
-                <p>Brief description of what this project does and why it matters.</p>
-                <div class="project-tags">
-                    <span class="skill-tag">Python</span>
-                    <span class="skill-tag">Docker</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">Source Code</a>
-                </div>
-            </article>
+                <article class="project-card">
+                    <h3>Project Three</h3>
+                    <p>Brief description of what this project does and why it matters.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">SQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">Source Code</a>
+                    </div>
+                </article>
 
-            <article class="project-card">
-                <h3>Project Three</h3>
-                <p>Brief description of what this project does and why it matters.</p>
-                <div class="project-tags">
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">SQL</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">Source Code</a>
-                </div>
-            </article>
-
-            <article class="project-card">
-                <h3>Project Four</h3>
-                <p>Brief description of what this project does and why it matters.</p>
-                <div class="project-tags">
-                    <span class="skill-tag">Rust</span>
-                    <span class="skill-tag">WebAssembly</span>
-                </div>
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">Source Code</a>
-                </div>
-            </article>
-
+                <article class="project-card">
+                    <h3>Project Four</h3>
+                    <p>Brief description of what this project does and why it matters.</p>
+                    <div class="project-tags">
+                        <span class="skill-tag">Rust</span>
+                        <span class="skill-tag">WebAssembly</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" target="_blank">Live Demo</a>
+                        <a href="#" target="_blank">Source Code</a>
+                    </div>
+                </article>
+            </div>
         </div>
     </section>
 
@@ -183,23 +192,58 @@
         <p class="section-subtitle">My creative works | music, 3D renders, and more.</p>
 
         <div class="misc-cards">
-            <a href="music.html" class="misc-card">
-                <div class="misc-card-label">Music</div>
-                <div class="misc-card-desc">Browse my music projects and tracks</div>
-                <span class="misc-card-arrow">&#8594;</span>
-            </a>
-            <a href="renders.html" class="misc-card">
-                <div class="misc-card-label">3D Renders</div>
-                <div class="misc-card-desc">Explore my 3D artwork and renders</div>
-                <span class="misc-card-arrow">&#8594;</span>
-            </a>
-            <a href="photography.html" class="misc-card">
-                <div class="misc-card-label">Photography</div>
-                <div class="misc-card-desc">View my photography collection</div>
-                <span class="misc-card-arrow">&#8594;</span>
-            </a>`
+            <button class="tab-btn" data-tab="music" id="tab-button">
+                <div class="misc-card">
+                    <div class="misc-card-label">Music</div>
+                    <div class="misc-card-desc">Browse my music projects and tracks</div>
+                    <span class="misc-card-arrow">&#8594;</span>
+                </div>
+            </button>
+            <button class="tab-btn" data-tab="renders" id="tab-button">
+                <a href="renders.html" class="misc-card">
+                    <div class="misc-card-label">3D Renders</div>
+                    <div class="misc-card-desc">Explore my 3D artwork and renders</div>
+                    <span class="misc-card-arrow">&#8594;</span>
+                </a>
+            </button>
+            <button class="tab-btn" data-tab="renders" id="tab-button">
+                <a href="photography.html" class="misc-card">
+                    <div class="misc-card-label">Photography</div>
+                    <div class="misc-card-desc">View my photography collection</div>
+                    <span class="misc-card-arrow">&#8594;</span>
+                </a>`
+            </button>
         </div>
     </section>
+
+    <section id="music" class="tab-content">
+        <div class="subpage-header">
+            <!-- <button id="back" data-tab="misc">&#8592; Back</button> -->
+            <!-- INTRO SECTION -->
+        <section>
+            <div class="intro-hero"  display: flex; object-fit: cover; width: 100vw;">
+                <div class="video-container">
+                    <video controls width="600" id="myVideo">
+                        <source src="res/insight  Official Lyric Video - NoFall (1080p, h264).mp4" type="video/mp4">
+                        <!-- <source src="my_video.ogg" type="video/ogg"> -->
+                    </video>
+                    <div class="hero-text" style="height: 100%;">
+                        <h1 style="height: 100%;"><span id="typewriter" style="position: relative; font-size: clamp(6rem, 10vw, 10rem); margin: auto 0; width: fit-content; padding: 10px;">Music</span></h1>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <div class="photo-placeholder" data-tab="pfp" style="background-image: url('res/formal_pfp.png'); ;">
+                    </div>
+                    <div class="hero-photo-info">
+                            <p>A self-taught developer with over five years of hands-on experience building software. I thrive on solving hard problems and learning new technologies independently.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </div>
+        
+    </section>
+
 
     <footer>
         <p>2026 NoFall</p>
