@@ -15,11 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const buttons = document.querySelectorAll(".tab-btn");
     const sections = document.querySelectorAll(".tab-content");
+    const backBtns = document.querySelectorAll("#back");
 
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
             // Captures all the buttons in the navbar with the tab dataset (data-tab in html)
             const target = btn.dataset.tab;
+
+            if (target === "music") {
+            typewriterEffect()
+            }
+            // if(btn.dataset.tab === )
 
             // Handles the active handler for each click listen
             buttons.forEach((b) => b.classList.remove("active"));
@@ -27,14 +33,35 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.classList.add("active");
 
             
+            const video = document.getElementById("myVideo");
             sections.forEach((s) => {
                 s.classList.remove("active");
                 if (s.id === target) {
                     s.classList.add("active");
                 }
             });
+            if (target === "music") {
+                video.play();
+                video.muted = false;
+                video.volume= 0.2;
+            } else {
+                video.pause();
+                video.muted = true
+            }
        });
     });
+
+     backBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const navbarBtns = btn.dataset.tab;
+
+            sections.classList.add("active")
+        })
+    });
+
+    sections.forEach((sections) => {
+
+    })
 
     const divisionPhotos = document.querySelectorAll("#section-photo")
 
@@ -54,11 +81,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
-    
-
     const myPhoto = document.querySelector(".hero-photo");
     const navBar = document.querySelector('.navbar')
     const typewritees = document.querySelectorAll("#typewriter");
+    function typewriterEffect() {
     typewritees.forEach((tw) => {
         const text = tw.innerText;
         tw.innerHTML = "";
@@ -69,7 +95,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 i++;
             }
         }, 100);
-    }) 
+        }) 
+    }
+    typewriterEffect()
     
     setTimeout(() => {
             myPhoto.style.visibility = "visible";

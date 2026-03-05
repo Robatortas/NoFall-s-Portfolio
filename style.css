@@ -73,7 +73,7 @@ h3 {
     background: var(--lightDivision);
     border-bottom: 1px solid var(--border);
     /* backdrop-filter: blur(12px); */
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
     filter: opacity(0%);
     transition: all 0.5s ease;
 }
@@ -134,6 +134,10 @@ h3 {
 }
 .tab-content.active {
     display: block;
+}
+.tab-button {
+    padding: 0%;
+    /* color: red; */
 }
 
 @keyframes fadeIn {
@@ -381,7 +385,8 @@ h3 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.25rem;
 }
 
@@ -462,6 +467,7 @@ h3 {
 
 /* ===== Sub-page (music / renders / photography) ===== */
 .subpage-header {
+    overflow: hidden;
     display: flex;
     align-items: center;
     gap: 1.2rem;
@@ -480,6 +486,26 @@ h3 {
 .back-link:hover {
     background: var(--surface);
     text-decoration: none;
+}
+
+.video-container{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.video-container video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-47%, -49%); /* Centers the video precisely */
+    object-fit: cover; /* Ensures the video covers the area without stretching */
+    scale: 1.08;
+    z-index: -1; /* Puts the video behind other content */
 }
 
 .gallery-grid {
