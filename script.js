@@ -16,6 +16,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".tab-btn");
     const sections = document.querySelectorAll(".tab-content");
     const backBtns = document.querySelectorAll("#back");
+    const video = document.getElementById("myVideo");
+    let pendingPlay = null;
+
+    const startVideoPlay = () => {
+        video.play();
+        let vol = 0;
+        const fadeIn = setInterval(() => {
+            vol = Math.min(vol + 0.02, 0.2);
+            video.volume = vol;
+            if (vol >= 0.2) clearInterval(fadeIn);
+        }, 50);
+        video.play();
+    };
 
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -32,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
             // This is below so that it captures the only one currently active ofc
             btn.classList.add("active");
 
-            
-            const video = document.getElementById("myVideo");
+
+            sections.forEach(s => s.classList.remove('showing-detail'));
+
             sections.forEach((s) => {
                 s.classList.remove("active");
                 if (s.id === target) {
@@ -41,12 +55,20 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
             if (target === "music") {
-                video.play();
                 video.muted = false;
-                video.volume= 0.2;
+                video.volume = 0;
+                startVideoPlay();
             } else {
-                video.pause();
-                video.muted = true
+                let vol = 0.2;
+                const fadeOut = setInterval(() => {
+                vol = Math.max(vol - 0.04, 0);
+                video.volume = vol;
+                if (vol <= 0.0) {
+                    clearInterval(fadeOut);
+                    video.pause();
+                    video.muted = true;
+                } 
+                }, 50);
             }
        });
     });
@@ -62,6 +84,24 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((sections) => {
 
     })
+
+    // Detail drill-down — generic for any tab section
+    document.querySelectorAll('[data-detail]').forEach(item => {
+        item.addEventListener('click', () => {
+            const section = item.closest('.tab-content');
+            section.classList.add('showing-detail');
+            document.getElementById(item.dataset.detail)
+                .scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    document.querySelectorAll('.detail-back-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const section = btn.closest('.tab-content');
+            section.classList.remove('showing-detail');
+            section.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
 
     const divisionPhotos = document.querySelectorAll("#section-photo")
 
