@@ -17,18 +17,41 @@ document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll(".tab-content");
     const backBtns = document.querySelectorAll("#back");
     const video = document.getElementById("myVideo");
-    let pendingPlay = null;
+    const owfaFrame = document.getElementById('owfaVideo');
 
-    const startVideoPlay = () => {
-        video.play();
+    const videoIntervals = new Map();
+
+    function fadeInVideo(el) {
+        if (!el) return;
+        if (videoIntervals.has(el)) clearInterval(videoIntervals.get(el));
+        el.muted = false;
+        el.volume = 0;
+        el.play();
         let vol = 0;
-        const fadeIn = setInterval(() => {
+        const id = setInterval(() => {
             vol = Math.min(vol + 0.02, 0.2);
-            video.volume = vol;
-            if (vol >= 0.2) clearInterval(fadeIn);
+            el.volume = vol;
+            if (vol >= 0.2) { clearInterval(id); videoIntervals.delete(el); }
         }, 50);
-        video.play();
-    };
+        videoIntervals.set(el, id);
+    }
+
+    function fadeOutVideo(el) {
+        if (!el) return;
+        if (videoIntervals.has(el)) clearInterval(videoIntervals.get(el));
+        let vol = el.volume;
+        const id = setInterval(() => {
+            vol = Math.max(vol - 0.04, 0);
+            el.volume = vol;
+            if (vol <= 0) {
+                clearInterval(id);
+                videoIntervals.delete(el);
+                el.pause();
+                el.muted = true;
+            }
+        }, 50);
+        videoIntervals.set(el, id);
+    }
 
     buttons.forEach((btn) => {
         btn.addEventListener("click", () => {
@@ -47,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             sections.forEach(s => s.classList.remove('showing-detail'));
+            fadeOutVideo(owfaFrame);
 
             sections.forEach((s) => {
                 s.classList.remove("active");
@@ -55,20 +79,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             });
             if (target === "music") {
-                video.muted = false;
-                video.volume = 0;
-                startVideoPlay();
+                fadeInVideo(video);
             } else {
-                let vol = 0.2;
-                const fadeOut = setInterval(() => {
-                vol = Math.max(vol - 0.04, 0);
-                video.volume = vol;
-                if (vol <= 0.0) {
-                    clearInterval(fadeOut);
-                    video.pause();
-                    video.muted = true;
-                } 
-                }, 50);
+                fadeOutVideo(video);
             }
        });
     });
@@ -85,6 +98,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     })
 
+    // OWFA video — play/pause based on scroll visibility
+    const owfaVideoSection = document.getElementById('andyoudontseem');
+    if (owfaVideoSection) {
+        const owfaObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    fadeInVideo(owfaFrame);
+                } else {
+                    fadeOutVideo(owfaFrame);
+                }
+            });
+        }, { threshold: 0.4 });
+        owfaObserver.observe(owfaVideoSection);
+    }
+
+
     // Detail drill-down — generic for any tab section
     document.querySelectorAll('[data-detail]').forEach(item => {
         item.addEventListener('click', () => {
@@ -100,7 +129,34 @@ document.addEventListener("DOMContentLoaded", () => {
             const section = btn.closest('.tab-content');
             section.classList.remove('showing-detail');
             section.scrollIntoView({ behavior: 'smooth' });
+            if (btn.closest('#owfa-detail')) fadeOutVideo(owfaFrame);
         });
+    });
+
+    // Screenshot carousel
+    const carouselImages = [
+        'res/owfa_sample_image_1.png', 'res/DSC_0220.JPG'
+    ];
+    let carouselIdx = 0;
+    const carouselImg = document.querySelector('.carousel-img');
+    const carouselCounter = document.querySelector('.carousel-counter');
+
+    function updateCarousel() {
+        carouselImg.style.opacity = '0';
+        setTimeout(() => {
+            carouselImg.src = carouselImages[carouselIdx];
+            carouselCounter.textContent = `${carouselIdx + 1} / ${carouselImages.length}`;
+            carouselImg.style.opacity = '1';
+        }, 150);
+    }
+
+    document.querySelector('.carousel-btn--prev').addEventListener('click', () => {
+        carouselIdx = (carouselIdx - 1 + carouselImages.length) % carouselImages.length;
+        updateCarousel();
+    });
+    document.querySelector('.carousel-btn--next').addEventListener('click', () => {
+        carouselIdx = (carouselIdx + 1) % carouselImages.length;
+        updateCarousel();
     });
 
     const divisionPhotos = document.querySelectorAll("#section-photo")
@@ -116,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
             navbar.style.visibility = "visible"
         }
         divisionPhotos.forEach((dP) => {
-            dP.style.transform = 'translateY(' + window.scrollY/13 + 'px)'
+            dP.style.transform = 'translateY(' + window.scrollY / 13 + 'px)';
         });
 
     })

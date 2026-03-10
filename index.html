@@ -48,7 +48,7 @@
             <div class="hero">
                 <!-- <p class="tagline">Software Developer &middot; 5+ Years of Experience</p> -->
                 <div class="hero-section-photo">
-                    <img id="section-photo" style="justify-content: center;" src="res/DSC_0262.JPG" alt="">
+                    <img id="section-photo" style="justify-content: center;" src="res/DSC_0221.JPG" alt="">
                 </div>
                 <div class="bio">
                     <p>
@@ -205,19 +205,84 @@
                     <h1>OWFA</h1>
                     <div class="hero">
                         <div class="hero-section-photo">
-                            <img src="res/DSC_0220.JPG" alt="Other Words for Alone">
+                            <img id="section-photo" src="res/owfa_sample_image_1.png" alt="">
                         </div>
                         <div class="bio">
                             <p>
-                                Other Words for Alone is a 2 year long project meant to hone my
-                                skills as a programmer. In the latest alpha versions of the game,
-                                built with our own in-house game engine made entirely in Java without
-                                any external libraries, we implemented perlin noise-based terrain
-                                generation, physics, collision, inventory system, player movement,
-                                stamina, health, and other interactable items and entities.
+                                Other Words for Alone is a two-year passion project built entirely from scratch in Java —
+                                no external libraries, no game framework. Every system in the engine was written by hand,
+                                from the pixel-level renderer to the physics solver.
+                                <br><br>
+                                The game is a 2D tile-based world with procedurally generated terrain, a fully simulated
+                                lighting system, and a suite of gameplay systems including inventory, stamina, health,
+                                and interactable entities. 
+                                <br><br>
+                                It is currently heading towards a different direction, transitioning from a sandbox game to a story driven game.
                             </p>
                         </div>
                     </div>
+                </section>
+            </div>
+
+            <!-- Engine feature highlights -->
+            <div class="division owfa-features-section">
+                <section class="owfa-features-content">
+                    <h2>Engine Highlights</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <span class="feature-icon">&#9632;</span>
+                            <h3>BufferedImage Renderer</h3>
+                            <p>The entire frame is painted by writing directly into a Java <code>int[]</code> pixel array backed by a <code>BufferedImage</code>. No OpenGL, no canvas library — raw pixel manipulation at 60 fps.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">&#9788;</span>
+                            <h3>Dynamic Lighting</h3>
+                            <p>A custom ray-casting light system computes per-pixel brightness at runtime. Light sources cast soft shadows across tiles and smoothly attenuate with distance using a falloff algorithm.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">&#9650;</span>
+                            <h3>Perlin Noise Terrain</h3>
+                            <p>World terrain is generated procedurally using layered Perlin noise. Biomes, and elevation emerge from multiple octaves of noise blended together, producing unique maps every run.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">&#9654;</span>
+                            <h3>Physics &amp; Collision</h3>
+                            <p>A lightweight AABB physics solver handles tile collision, slopes, and entity interactions. Velocity, friction, and gravity are all simulated per-entity each tick.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">&#9825;</span>
+                            <h3>Gameplay Systems</h3>
+                            <p>Built-in systems for inventory management, stamina, health, and entity AI. Items, tools, and interactable objects are all driven by a shared component model.</p>
+                        </div>
+                        <div class="feature-card">
+                            <span class="feature-icon">&#9881;</span>
+                            <h3>Zero Dependencies</h3>
+                            <p>The entire engine and game ship as a single Java project with no third-party dependencies. Windowing, input, audio hooks, and rendering are all handled through the standard Java SE library.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div class="division">
+                <section class="contents" id="andyoudontseem">
+                        <h1>Coding Timelapse !</h1>
+                        <div class="normal-video-container">
+                            <video id="owfaVideo" style="margin-bottom: 10%;" src="res/Code TimeLapse 2 The Return..mp4" preload="auto"></video>
+                        </div>
+                </section>
+            </div>
+
+            <!-- Screenshots carousel -->
+            <div class="division owfa-screenshots-section">
+                <section class="contents">
+                    <h1>Screenshots</h1>
+                    <div class="screenshot-carousel">
+                        <button class="carousel-btn carousel-btn--prev">&#8592;</button>
+                        <div class="carousel-window">
+                            <img class="carousel-img" src="res/owfa_sample_image_1.png" alt="Screenshot">
+                        </div>
+                        <button class="carousel-btn carousel-btn--next">&#8594;</button>
+                    </div>
+                    <div class="carousel-counter">1 / 1</div>
                 </section>
             </div>
         </div>
