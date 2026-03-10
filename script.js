@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
             btn.classList.add("active");
 
 
-            sections.forEach(s => s.classList.remove('showing-detail'));
+            sections.forEach(s => { s.classList.remove('showing-detail'); s.removeAttribute('data-showing'); });
             fadeOutVideo(owfaFrame);
 
             sections.forEach((s) => {
@@ -119,6 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
         item.addEventListener('click', () => {
             const section = item.closest('.tab-content');
             section.classList.add('showing-detail');
+            section.dataset.showing = item.dataset.detail;
             document.getElementById(item.dataset.detail)
                 .scrollIntoView({ behavior: 'smooth' });
         });
@@ -128,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener('click', () => {
             const section = btn.closest('.tab-content');
             section.classList.remove('showing-detail');
+            section.removeAttribute('data-showing');
             section.scrollIntoView({ behavior: 'smooth' });
             if (btn.closest('#owfa-detail')) fadeOutVideo(owfaFrame);
         });

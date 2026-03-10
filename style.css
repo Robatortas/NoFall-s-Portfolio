@@ -600,6 +600,9 @@ h3 {
 #insight-detail {
     display: none;
 }
+#coffee-detail {
+    display: none;
+}
 #music.showing-detail .music-releases {
     display: none;
 }
@@ -668,10 +671,13 @@ h3 {
     display: none;
     animation: fadeIn 0.3s, ease-in;
 }
-#tech.showing-detail .tech-overview {
+#tech[data-showing] .tech-overview {
     display: none;
 }
-#tech.showing-detail #owfa-detail {
+#tech[data-showing="owfa-detail"] #owfa-detail {
+    display: block;
+}
+#tech[data-showing="coffee-detail"] #coffee-detail {
     display: block;
 }
 
