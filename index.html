@@ -45,10 +45,11 @@
         <!-- ABOUT ME -->
         <div class="division">
         <section class="contents">
+            <h1>Who am I ?</h1>
             <div class="hero">
                 <!-- <p class="tagline">Software Developer &middot; 5+ Years of Experience</p> -->
                 <div class="hero-section-photo">
-                    <img id="section-photo" style="justify-content: center;" src="res/DSC_0221.JPG" alt="">
+                    <img id="section-photo" src="res/DSC_0221.JPG" alt="">
                 </div>
                 <div class="bio">
                     <p>
@@ -236,8 +237,8 @@
                         </div>
                         <div class="feature-card">
                             <span class="feature-icon">&#9788;</span>
-                            <h3>Dynamic Lighting</h3>
-                            <p>A custom ray-casting light system computes per-pixel brightness at runtime. Light sources cast soft shadows across tiles and smoothly attenuate with distance using a falloff algorithm.</p>
+                            <h3>Lighting</h3>
+                            <p>A custom light-map system computes per-pixel brightness at runtime. Light sources cast radial emissions across tiles and smoothly attenuate with distance using a falloff algorithm.</p>
                         </div>
                         <div class="feature-card">
                             <span class="feature-icon">&#9650;</span>
@@ -278,11 +279,30 @@
                     <div class="screenshot-carousel">
                         <button class="carousel-btn carousel-btn--prev">&#8592;</button>
                         <div class="carousel-window">
-                            <img class="carousel-img" src="res/owfa_sample_image_1.png" alt="Screenshot">
+                            <img class="carousel-img" src="res/owfa_screenshot_2.png" alt="Screenshot">
                         </div>
                         <button class="carousel-btn carousel-btn--next">&#8594;</button>
                     </div>
                     <div class="carousel-counter">1 / 1</div>
+                </section>
+            </div>
+
+            <div class="division owfa-screenshots-section">
+                <section class="contents">
+                    <h1>Source Code</h1>
+                    <div class="hero">
+                        <div class="hero-section-code">
+                            <iframe id="source-code" allow="clipboard-write" style="height: 100%;" frameborder="0" scrolling src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2F1B-Software%2FOther-Words-for-Alone-Retro-Edition%2Fblob%2Fmain%2Fsrc%2Frobatortas%2Fcode%2Ffiles%2Fproject%2FGameManager.java&style=srcery&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+                        </div>
+                    <div class="bio">
+                            <p>
+                                You can find the in development source code <span style="font-size: larger;"><a target="_blank" href="https://github.com/1B-Software/Other-Words-for-Alone-Retro-Edition">here !</a></span>
+                                <br><br>
+                                Its constantly being updated and will eventually become a fully fledged story driven game !
+                                The code is entirely made in Java with software rendering and buffer images, meaning heavy pixel array handling is involved.
+                            </p>
+                        </div>
+                        </div>
                 </section>
             </div>
         </div>
@@ -306,11 +326,11 @@
                     <h1>What's it about ?</h1>
                     <div class="hero">
                         <div class="hero-section-photo">
-                            <img id="section-photo" src="res/owfa_sample_image_1.png" alt="">
+                            <img id="section-photo" src="res/coffee_beans_screenshot.png" alt="">
                         </div>
                         <div class="bio">
                             <p>
-                                Coffee Beans Deluxe is a program tailored to the user, where they can download
+                                Coffee Beans Deluxe is a program currently in active development tailored to the user, where they can download
                                 videos off of Youtube and in the near future, off of almost any other mainstream
                                 platform around !
                                 <br>
@@ -364,7 +384,7 @@
         <section>
             <div class="intro-hero"  display: flex; object-fit: cover; width: 100vw;">
                 <div class="video-container">
-                    <video id="myVideo" poster="res/insight-loading-placeholder.png" preload="auto" playsinline>
+                    <video id="myVideo" poster="res/insight-loading-placeholder.png" preload="auto" playsinline loop>
                         <source src="res/insight  Official Lyric Video - NoFall (1080p, h264)_Comp.mp4" type="video/mp4">
                         <!-- <source src="my_video.ogg" type="video/ogg"> -->
                     </video>

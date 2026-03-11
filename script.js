@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Screenshot carousel
     const carouselImages = [
-        'res/owfa_sample_image_1.png', 'res/DSC_0220.JPG'
+        'res/owfa_screenshot_2.png', 'res/DSC_0220.JPG'
     ];
     let carouselIdx = 0;
     const carouselImg = document.querySelector('.carousel-img');
