@@ -612,10 +612,16 @@ h3 {
 #coffee-detail {
     display: none;
 }
+#dissonant-detail {
+    display: none;
+}
 #music.showing-detail .music-releases {
     display: none;
 }
-#music.showing-detail #insight-detail {
+#music[data-showing="insight-detail"] #insight-detail {
+    display: block;
+}
+#music[data-showing="dissonant-detail"] #dissonant-detail {
     display: block;
 }
 
