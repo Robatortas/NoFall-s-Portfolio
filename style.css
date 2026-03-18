@@ -612,6 +612,9 @@ h3 {
 #coffee-detail {
     display: none;
 }
+#blossom-detail {
+    display: none;
+}
 #dissonant-detail {
     display: none;
 }
@@ -704,6 +707,9 @@ h3 {
     display: block;
 }
 #tech[data-showing="coffee-detail"] #coffee-detail {
+    display: block;
+}
+#tech[data-showing="blossom-detail"] #blossom-detail {
     display: block;
 }
 

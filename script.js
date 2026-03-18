@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (owfaVideoSection) {
         const owfaObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                // Basically, if its just on view thank u Intersection Observer !
                 if (entry.isIntersecting) {
                     fadeInVideo(owfaFrame);
                 } else {
@@ -113,6 +114,20 @@ document.addEventListener("DOMContentLoaded", () => {
         owfaObserver.observe(owfaVideoSection);
     }
 
+
+    // Music video — play/pause based on scroll visibility
+    if (video) {
+        const musicObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    fadeInVideo(video);
+                } else {
+                    fadeOutVideo(video);
+                }
+            });
+        }, { threshold: 0.4 });
+        musicObserver.observe(video);
+    }
 
     // Detail drill-down — generic for any tab section
     document.querySelectorAll('[data-detail]').forEach(item => {
@@ -135,30 +150,30 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Screenshot carousel
-    const carouselImages = [
-        'res/owfa_screenshot_2.png', 'res/DSC_0220.JPG'
-    ];
-    let carouselIdx = 0;
-    const carouselImg = document.querySelector('.carousel-img');
-    const carouselCounter = document.querySelector('.carousel-counter');
+    // Universal screenshot carousel
+    document.querySelectorAll('.screenshot-carousel').forEach(carousel => {
+        const images = JSON.parse(carousel.dataset.images || '[]');
+        const img = carousel.querySelector('.carousel-img');
+        const counter = carousel.nextElementSibling;
+        let idx = 0;
 
-    function updateCarousel() {
-        carouselImg.style.opacity = '0';
-        setTimeout(() => {
-            carouselImg.src = carouselImages[carouselIdx];
-            carouselCounter.textContent = `${carouselIdx + 1} / ${carouselImages.length}`;
-            carouselImg.style.opacity = '1';
-        }, 150);
-    }
+        function updateCarousel() {
+            img.style.opacity = '0';
+            setTimeout(() => {
+                img.src = images[idx];
+                counter.textContent = `${idx + 1} / ${images.length}`;
+                img.style.opacity = '1';
+            }, 150);
+        }
 
-    document.querySelector('.carousel-btn--prev').addEventListener('click', () => {
-        carouselIdx = (carouselIdx - 1 + carouselImages.length) % carouselImages.length;
-        updateCarousel();
-    });
-    document.querySelector('.carousel-btn--next').addEventListener('click', () => {
-        carouselIdx = (carouselIdx + 1) % carouselImages.length;
-        updateCarousel();
+        carousel.querySelector('.carousel-btn--prev').addEventListener('click', () => {
+            idx = (idx - 1 + images.length) % images.length;
+            updateCarousel();
+        });
+        carousel.querySelector('.carousel-btn--next').addEventListener('click', () => {
+            idx = (idx + 1) % images.length;
+            updateCarousel();
+        });
     });
 
     const divisionPhotos = document.querySelectorAll("#section-photo")

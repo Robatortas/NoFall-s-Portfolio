@@ -138,10 +138,12 @@
                     <p>2D tile-based video game with procedural terrain generation and inhouse game engine</p>
                     <div class="project-tags">
                         <span class="skill-tag">Java</span>
+                        <span class="skill-tag">OpenGL</span>
+                        <span class="skill-tag">GLFW</span>
                     </div>
                     <div class="project-links">
                         <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Source Code</a>
+                        <a href="https://github.com/1B-Software/Other-Words-for-Alone-Retro-Edition/tree/OpenGL_Port" target="_blank">Source Code</a>
                     </div>
                 </article>
 
@@ -157,25 +159,11 @@
                     </div>
                 </article>
 
-                <article class="project-card">
-                    <h3>Project Three</h3>
-                    <p>Brief description of what this project does and why it matters.</p>
+                <article class="project-card project-card--detail" data-detail="blossom-detail">
+                    <h3>Blossom</h3>
+                    <p>Visual Spotify theme</p>
                     <div class="project-tags">
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="#" target="_blank">Live Demo</a>
-                        <a href="#" target="_blank">Source Code</a>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <h3>Project Four</h3>
-                    <p>Brief description of what this project does and why it matters.</p>
-                    <div class="project-tags">
-                        <span class="skill-tag">Rust</span>
-                        <span class="skill-tag">WebAssembly</span>
+                        <span class="skill-tag">CSS</span>
                     </div>
                     <div class="project-links">
                         <a href="#" target="_blank">Live Demo</a>
@@ -214,6 +202,10 @@
                                 no external libraries, no game framework. Every system in the engine was written by hand,
                                 from the pixel-level renderer to the physics solver.
                                 <br><br>
+                                The game has now been porter to OpenGL with the LWJGL library, utilizing the architecture of the deprecated
+                                pixel-based renderer with OpenGL quads, allowing for shaders and huge performance gains, making this new renderer 
+                                24x more performant than the pixel-based one thanks to the utilization of the GPU.
+
                                 The game is a 2D tile-based world with procedurally generated terrain, a fully simulated
                                 lighting system, and a suite of gameplay systems including inventory, stamina, health,
                                 and interactable entities. 
@@ -232,8 +224,8 @@
                     <div class="features-grid">
                         <div class="feature-card">
                             <span class="feature-icon">&#9632;</span>
-                            <h3>BufferedImage Renderer</h3>
-                            <p>The entire frame is painted by writing directly into a Java <code>int[]</code> pixel array backed by a <code>BufferedImage</code>. No OpenGL, no canvas library — raw pixel manipulation at 60 fps.</p>
+                            <h3>OpenGL Renderer</h3>
+                            <p>The entire frame is painted into an FBO that allows for accurate fragment shader calculations. <code>int[]</code> pixel array backed by a <code>BufferedImage</code>. No OpenGL, no canvas library — raw pixel manipulation at 60 fps.</p>
                         </div>
                         <div class="feature-card">
                             <span class="feature-icon">&#9788;</span>
@@ -248,7 +240,7 @@
                         <div class="feature-card">
                             <span class="feature-icon">&#9654;</span>
                             <h3>Physics &amp; Collision</h3>
-                            <p>A lightweight AABB physics solver handles tile collision, slopes, and entity interactions. Velocity, friction, and gravity are all simulated per-entity each tick.</p>
+                            <p>A lightweight physics solver handles tile collision, slopes, and item interactions. Velocity, friction, and gravity are all simulated per-item each tick.</p>
                         </div>
                         <div class="feature-card">
                             <span class="feature-icon">&#9825;</span>
@@ -257,8 +249,8 @@
                         </div>
                         <div class="feature-card">
                             <span class="feature-icon">&#9881;</span>
-                            <h3>Zero Dependencies</h3>
-                            <p>The entire engine and game ship as a single Java project with no third-party dependencies. Windowing, input, audio hooks, and rendering are all handled through the standard Java SE library.</p>
+                            <h3>Zero Dependencies - Until now !</h3>
+                            <p>The entire engine and game shipped as a single Java project with no third-party dependencies. But CPU limitations made us transition to the use of OpenGL.</p>
                         </div>
                     </div>
                 </section>
@@ -276,14 +268,14 @@
             <div class="division owfa-screenshots-section" style="background-color: #3c2f2f;">
                 <section class="contents">
                     <h1>Screenshots</h1>
-                    <div class="screenshot-carousel">
+                    <div class="screenshot-carousel" data-images='["res/owfa_screenshot_2.png","res/DSC_0220.JPG"]'>
                         <button class="carousel-btn carousel-btn--prev">&#8592;</button>
                         <div class="carousel-window">
                             <img class="carousel-img" src="res/owfa_screenshot_2.png" alt="Screenshot">
                         </div>
                         <button class="carousel-btn carousel-btn--next">&#8594;</button>
                     </div>
-                    <div class="carousel-counter">1 / 1</div>
+                    <div class="carousel-counter">1 / 2</div>
                 </section>
             </div>
 
@@ -292,14 +284,14 @@
                     <h1>Source Code</h1>
                     <div class="hero">
                         <div class="hero-section-code">
-                            <iframe id="source-code" allow="clipboard-write" style="height: 100%;" frameborder="0" scrolling src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2F1B-Software%2FOther-Words-for-Alone-Retro-Edition%2Fblob%2Fmain%2Fsrc%2Frobatortas%2Fcode%2Ffiles%2Fproject%2FGameManager.java&style=srcery&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+                            <iframe id="source-code" allow="clipboard-write" style="height: 100%;" frameborder="0" scrolling src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2F1B-Software%2FOther-Words-for-Alone-Retro-Edition%2Fblob%2FOpenGL_Port%2Fsrc%2Frobatortas%2Fcode%2Ffiles%2Fproject%2FGameManager.java&style=srcery&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
                         </div>
                     <div class="bio">
                             <p>
                                 You can find the in development source code <span style="font-size: larger;"><a target="_blank" href="https://github.com/1B-Software/Other-Words-for-Alone-Retro-Edition">here !</a></span>
                                 <br><br>
                                 Its constantly being updated and will eventually become a fully fledged story driven game !
-                                The code is entirely made in Java with software rendering and buffer images, meaning heavy pixel array handling is involved.
+                                The code is entirely made in Java with OpenGL, allowing for GPU rendering, leaving the CPU load much lighter.
                             </p>
                         </div>
                         </div>
@@ -307,7 +299,7 @@
             </div>
         </div>
 
-        <div id="coffee-detail" class="tab-content">
+        <div id="coffee-detail">
             <div class="subpage-header">
                 <section>
                     <div class="video-container">
@@ -337,6 +329,9 @@
                                 The process to give the user the highest quality multimedia experience utilizes ffmpeg to accomplish it,
                                 downloading separate channels of video, for it to encode them together, giving the user the
                                 highest image and audio quality there is to offer.
+                                <br><br>
+                                This app was already developed once, but that iteration is permanently deprecated, since some libraries used
+                                were changed to a subscription model.
                             </p>
                         </div>
                     </div>
@@ -344,6 +339,78 @@
             </div>
         </div>
 
+
+        <div id="blossom-detail">
+            <div class="subpage-header">
+                <section>
+                    <div class="video-container">
+                         <img class="header-img" style="width: 100%;" src="res/Blossom_Render.png" alt="Other Words for Alone">
+                        <div class="hero-text" style="height: 100%;">
+                            <h1 style="height: 100%;"><span style="position: relative; font-size: clamp(6rem, 9vw, 10rem); margin: auto 0; width: fit-content; padding: 10px; text-align: left;">Blossom</span></h1>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Bio section -->
+            <div class="division hero-photo-section">
+                <section class="contents">
+                    <button class="detail-back-btn">&#8592; Back</button>
+                    <h1>What's it about ?</h1>
+                    <div class="hero">
+                        <div class="hero-section-photo">
+                            <img id="section-photo" src="res/Blossom_code_screenshot.png" alt="">
+                        </div>
+                        <div class="bio">
+                            <p>
+                                Blossom is a custom made theme made with Spicetify and CSS. The theme is even featured in 
+                                the official spicetify themes repository <a target="_blank" href="https://github.com/spicetify/spicetify-themes/tree/master/Blossom">here !</a>
+                                <br>
+                                This gave me the experience of actually contributing to a major repository, where the demands were meeted as expected, 
+                                letting me get featured for my work. Spicetify allowed me to check the html
+                                structure of spotify's app and allowed me to debug in real time, making the process much easier
+                                <br><br>
+                                The color pallette was also developed entirely by me, since I wanted to capture discord like colors to match my setup.
+                                Who knows, maybe someone found this theme and thought it was perfect for their setup : D
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Screenshots carousel -->
+            <div class="division owfa-screenshots-section" style="background-color: #3c2f2f;">
+                <section class="contents">
+                    <h1>Screenshots</h1>
+                    <div class="screenshot-carousel" data-images='["res/Blossom_screenshot_1.png","res/Blossom_screenshot_2.png"]'>
+                        <button class="carousel-btn carousel-btn--prev">&#8592;</button>
+                        <div class="carousel-window">
+                            <img class="carousel-img" src="res/Blossom_screenshot_1.png" alt="Screenshot">
+                        </div>
+                        <button class="carousel-btn carousel-btn--next">&#8594;</button>
+                    </div>
+                    <div class="carousel-counter">1 / 2</div>
+                </section>
+            </div>
+
+            <div class="division owfa-screenshots-section">
+                <section class="contents">
+                    <h1>Source Code</h1>
+                    <div class="hero">
+                        <div class="hero-section-code">
+                            <iframe id="source-code" allow="clipboard-write" style="height: 100%;" frameborder="0" scrolling src="https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FRobatortas%2FCoffee-Beans-Deluxe%2Fblob%2Fmain%2Fmain.py&style=srcery&type=code&showBorder=on&showLineNumbers=on&showFileMeta=on&showFullPath=on&showCopy=on"></iframe>
+                        </div>
+                    <div class="bio">
+                            <p>
+                                You can find the in development source code <span style="font-size: larger;"><a target="_blank" href="https://github.com/Robatortas/Coffee-Beans-Deluxe/tree/main">here !</a></span>
+                                <br><br>
+                                Its constantly being updated !
+                            </p>
+                        </div>
+                        </div>
+                </section>
+            </div>
+        </div>
 
     </section>
 
@@ -360,7 +427,7 @@
                     <span class="misc-card-arrow">&#8594;</span>
                 </div>
             </button>
-            <button class="tab-btn" data-tab="renders" id="tab-button">
+            <!-- <button class="tab-btn" data-tab="renders" id="tab-button">
                 <a href="renders.html" class="misc-card">
                     <div class="misc-card-label">3D Renders</div>
                     <div class="misc-card-desc">Explore my 3D artwork and renders</div>
@@ -373,7 +440,7 @@
                     <div class="misc-card-desc">View my photography collection</div>
                     <span class="misc-card-arrow">&#8594;</span>
                 </a>
-            </button>
+            </button> -->
         </div>
     </section>
 
@@ -384,7 +451,7 @@
             <section>
                 <div class="intro-hero" style="display: flex; object-fit: cover; width: 100vw;">
                     <div class="video-container">
-                        <video id="myVideo" poster="res/insight-loading-placeholder.png" preload="auto" playsinline loop>
+                        <video id="myVideo" poster="res/insight-loading-placeholder.png" preload="auto" playsinline loop muted>
                             <source src="res/insight  Official Lyric Video - NoFall (1080p, h264)_Comp.mp4" type="video/mp4">
                             <!-- <source src="my_video.ogg" type="video/ogg"> -->
                         </video>
@@ -410,45 +477,41 @@
                     <div class="gallery-item-sub">2024</div>
                 </div>
             </div>
-
-            <div class="gallery-category-label">Albums &amp; EPs</div>
-            <div class="gallery-grid">
-                <div class="gallery-item">
-                    <div class="gallery-cover">Cover</div>
-                    <div class="gallery-item-title">Album Name</div>
-                    <div class="gallery-item-sub">2024</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="gallery-cover">Cover</div>
-                    <div class="gallery-item-title">EP Name</div>
-                    <div class="gallery-item-sub">2023</div>
-                </div>
-            </div>
         </section>
 
-        <div class="division hero-photo-section" id="insight-detail">
-            <section class="contents">
-                <button class="detail-back-btn">&#8592; Back</button>
-                <h1>Insight</h1>
-                <div class="hero">
-                    <!-- <p class="tagline">Software Developer &middot; 5+ Years of Experience</p> -->
-                    <div class="hero-section-photo">
-                        <img id="section-photo" style="margin: auto;" src="res/insight.jpg" alt="">
+        <div id="insight-detail">
+            <div class="division hero-photo-section">
+                <section class="contents">
+                    <button class="detail-back-btn">&#8592; Back</button>
+                    <h1>Insight</h1>
+                    <div class="hero">
+                        <!-- <p class="tagline">Software Developer &middot; 5+ Years of Experience</p> -->
+                        <div class="hero-section-photo">
+                            <img id="section-photo" style="margin: auto;" src="res/insight.jpg" alt="">
+                        </div>
+                        <div class="bio">
+                            <p>
+                                This song got nurtured from damaging self image, present in both me, and everyone else as human beings.
+                                Composed and produced in FL Studio, its a project completely made digitally, with the instruments spanning from
+                                painos, to guitars, to synthesizers.
+                                <br>
+                                The production spanned from June 8th 2024 to July 4th 2024, making its debut on July 6th 2024 on all streaming platrforms
+                                accompanied by a music video filmed by my friend NQS and edited by me.
+                                <br>
+                                The vocal performance was made by me, with pitch processing effects alongside formant shifting
+                            </p>
+                        </div>
                     </div>
-                    <div class="bio">
-                        <p>
-                            This song got nurtured from damaging self image, present in both me, and everyone else as human beings.
-                            Composed and produced in FL Studio, its a project completely made digitally, with the instruments spanning from
-                            painos, to guitars, to synthesizers.
-                            <br>
-                            The production spanned from June 8th 2024 to July 4th 2024, making its debut on July 6th 2024 on all streaming platrforms
-                            accompanied by a music video filmed by my friend NQS and edited by me.
-                            <br>
-                            The vocal performance was made by me, with pitch processing effects alongside formant shifting
-                        </p>
+                </section>
+            </div>
+            <div class="division" style="background-color: #3c2f2f;">
+                <section class="contents">
+                    <h1>You can listen to it here !</h1>
+                    <div class="frame-holder">
+                        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/1VPz4cOow1FwEgR87sZweh?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </div>
 
         <div id="dissonant-detail">
